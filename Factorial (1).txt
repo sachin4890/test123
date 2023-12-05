@@ -1,0 +1,416 @@
+Factorial 
+
+let n = 4;
+let answer = 1;
+
+for(var i = n; i >= 1; i--){
+      answer = answer * i;
+    }
+    console.log("The factorial of " + n + " is " + answer);
+
+ n prime number 
+const isPrime = (n) => {
+  for(let i = 2; i <= n/2; i++){
+      if(n % i === 0){
+        return false;
+      }
+  };
+  return true;
+};
+const generatePrime = num => {
+  const arr = [];
+  let i = 2;
+  while(arr.length < num){
+      if(isPrime(i)){
+        arr.push(i);
+      };
+      i = i === 2 ? i+1 : i+2;
+  };
+  return arr;
+};
+console.log(generatePrime(10));
+
+Prime number => 
+    function isPrime(n) {
+      if (n <= 1)
+          return false;
+    
+    
+      for (let i = 2; i < n; i++)
+          if (n % i == 0)
+              return false;
+    
+      return true;
+    }
+  
+    isPrime(11) 
+      ? console.log("true") 
+      : console.log("false");
+    
+next palindrom => 
+function reverse(nums) {
+  var reverse = "";
+  for (var i = String(nums).length - 1; i >= 0; i--) {
+    reverse += String(nums)[i];
+  }
+  return reverse;
+}
+
+function Palindrome(num) {
+  if (String(num).length < 2) {
+    return num + 1
+  }
+
+  for (var i = num + 1; ; i++) {
+    if (String(i) === reverse(i)) {
+      return i
+    }
+  }
+}    
+console.log(Palindrome(23));
+
+
+ FABONICI SERIES
+
+const number = 5;
+    let n1 = 0, n2 = 1, nextTerm;
+    for (let i = 1; i <= number; i++) {
+    console.log(n1);
+    nextTerm = n1 + n2;
+    n1 = n2;
+    n2 = nextTerm;
+
+      
+    }
+
+right triangle pattern in javascript
+
+    let n = 5;
+let string = "";
+for (let i = 1; i <= n; i++) {
+  // printing spaces
+  for (let j = 0; j < n - i; j++) {
+    string += " ";
+  }
+  // printing star
+  for (let k = 0; k < i; k++) {
+    string += "*";
+  }
+  string += "\n";
+}
+console.log(string);
+
+
+
+Left triangle pattern in javascript
+
+let n = 5;
+let string = "";
+for (let i = 1; i <= n; i++) {
+  for (let j = 0; j < i; j++) {
+    string += "*";
+  }
+  string += "\n";
+}
+console.log(string);
+
+
+ Javascript pyramid pattern
+
+ let n = 5;
+let string = "";
+// External loop
+for (let i = 1; i <= n; i++) {
+  // printing spaces
+  for (let j = 1; j <= n - i; j++) {
+    string += " ";
+  }
+  // printing star
+  for (let k = 0; k < 2 * i - 1; k++) {
+    string += "*";
+  }
+  string += "\n";
+}
+console.log(string);
+
+
+Reversed pyramid star pattern
+let n = 5;
+let string = "";
+// External loop
+for (let i = 0; i < n; i++) {
+  // printing spaces
+  for (let j = 0; j < i; j++) {
+    string += " ";
+  }
+  // printing star
+  for (let k = 0; k < 2 * (n-i) - 1; k++) {
+    string += "*";
+  }
+  string += "\n";
+}
+console.log(string);
+
+
+array uniqe
+var a = [];
+    var l=arr.length;
+    for (var i=0; i<l; i++){
+        if (a.indexOf(arr[i]) === -1 && arr[i] !== ''){
+            a.push(arr[i]);
+        }
+    }
+    console.log(a);
+
+
+same values as a key
+$p = ['input' => 'randy', 'sany' => 'piyu', 'output' => 'randy'];
+$q = [];
+foreach($p as $k => $v){
+  if(isset($a[$v])){
+    array_push($a[$v], $k);
+  } else{
+    $a[$v] = [$k];
+  }
+}
+print_r($a);
+
+
+find second hiest number from array
+function findSecondLargestElem(arr){
+    let first = -1 , second = -1;
+
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] > first){
+            second = first;
+            first = arr[i];
+        }
+        else if( arr[i] > second && arr[i] != first){
+            second = arr[i];
+        }
+    }
+    console.log(second);
+}
+let arr = [12, 35, 1, 10, 34, 1]
+findSecondLargestElem(arr);
+
+
+find hiest number from array
+var arr = [3, 6, 2, 56, 32, 5, 89, 32];
+var largest = arr[0];
+
+for (var i = 0; i < arr.length; i++) {
+    if (largest < arr[i] ) {
+        largest = arr[i];
+    }
+}
+console.log(largest);
+
+
+function reverse(s){
+    return s.split("").reverse().join("");
+    return s.split("").reverse().join("").split(" ").reverse().join(" ");
+}
+
+
+duplicate values
+
+const numbers = [1, 2, 3, 2, 4, 5, 5, 6];
+const duplicates = numbers.filter((item, index) => index !== numbers.indexOf(item));
+console.log(duplicates);
+
+
+
+
+remove value from array
+
+const array = [2, 5, 9];
+
+const index = array.indexOf(5);
+if (index > -1) { 
+  array.splice(index, 1); 
+}
+
+// array = [2, 9]
+console.log(array); 
+
+
+
+
+/// promise code
+
+const count = true;
+
+let countValue = new Promise(function (resolve, reject) {
+    if (count) {
+        resolve("There is a count value.");
+    } else {
+        reject("There is no count value");
+    }
+});
+
+console.log(countValue);
+
+
+
+/// Callback code
+
+function greet(name, callback) {
+    console.log('Hi' + ' ' + name);
+    callback();
+}
+
+function callMe() {
+    console.log('I am callback function');
+}
+
+greet('Peter', callMe);
+
+
+
+/// EventEmitter
+
+const EventEmitter = require('events');
+
+var eventEmitter = new EventEmitter();
+
+eventEmitter.on('myEvent', (msg) => {
+console.log(msg);
+});
+
+eventEmitter.emit('myEvent', "First event");
+
+
+
+// Create server
+
+const http = require('http');
+const requestListener = function (req, res) {
+  res.writeHead(200);
+  res.end('Hello, World!');
+}
+const server = http.createServer(requestListener);
+server.listen(8080);
+
+//express create server
+const express = require('express');
+
+const app = express();
+const port = 3000;
+
+app.listen(port, () => {
+  console.log(`server run on port ${port}`);
+});
+
+
+
+// socket connection
+
+const app = require('express')();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+io.on('connection', () => { /* … */ });
+server.listen(3000);
+
+
+
+
+
+// closer example
+
+function numberGenerator() {
+  var num = 1;
+  function checkNumber() { 
+    console.log(num);
+  }
+  num++;
+  return checkNumber;
+}
+
+var number = numberGenerator();
+number(); // 2
+
+
+
+
+
+//async await
+
+async function showAvatar() {
+
+  // read our JSON
+  let response = await fetch('/article/promise-chaining/user.json');
+  let user = await response.json();
+
+
+  // wait 3 seconds
+  await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+
+  img.remove();
+
+  return user;
+}
+
+showAvatar();
+
+
+
+// accending order
+
+var Arr = [1, 7, 2, 8, 3, 4, 5, 0, 9];
+
+for (var i = 1; i < Arr.length; i++)
+    for (var j = 0; j < i; j++)
+        if (Arr[i] < Arr[j]) {
+          var x = Arr[i];
+          Arr[i] = Arr[j];
+          Arr[j] = x;
+        }
+
+console.log(Arr);
+
+var numArray = [140000, 104, 99];
+numArray.sort(function(a, b) {
+  return a - b;
+});
+
+console.log(numArray);
+
+
+// axios code
+var options = {
+    'method': 'POST',
+    'url': 'https://third/party/api/url',
+    'headers': {
+      'X-API-KEY': 'E6xwOg2BY4RbmiJogfyegrt746r7te',
+      'Content-Type': 'application/json'
+    }
+  };
+  const result = await axios(options);
+
+
+
+//missing number
+
+  var a = [5],
+  count = 5;
+var missing = new Array();
+
+for (var i = 1; i <= count; i++) {
+  if (a.indexOf(i) == -1) {
+    missing.push(i);
+  }
+}
+console.log(missing); // to check the result.
+
+
+array of object sort
+
+let objArray = [{DepartmentName : 'ac'},{DepartmentName : 'ab'}];
+
+objArray.sort(function(a, b) {
+    var textA = a.DepartmentName.toUpperCase();
+    var textB = b.DepartmentName.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+});
+console.log(objArray);
